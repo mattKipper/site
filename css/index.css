@@ -25,10 +25,16 @@
     margin-bottom: 0;
   }
   p,
-  .tmpl-post li,
-  img {
+  .tmpl-post li
+  {
     max-width: 45em; /* 600px /16 */
   }
+
+  .tmpl-post img
+  {
+    max-width: 100%;
+  }
+
   p,
   .tmpl-post li {
     line-height: 1.45;
@@ -211,7 +217,7 @@
 blockquote{
   font-style:italic;
   color: #303030;
-  padding:0.5em 3em 0.5em 1em;
+  padding:0.5em 0.75em 0.5em 0.75em;
   border-left:4px solid #505050 ;
   line-height:1.6;
   position: relative;
