@@ -217,7 +217,8 @@
 blockquote{
   font-style:italic;
   color: #303030;
-  padding:0.5em 0.75em 0.5em 0.75em;
+  padding:0.5em 1em 0.5em 1em;
+  margin: 0 1em 0 1em;
   border-left:4px solid #505050 ;
   line-height:1.6;
   position: relative;
