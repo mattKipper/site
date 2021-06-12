@@ -135,7 +135,7 @@ stored is very sensitive, you may need to deal with this. This was a concern in 
 ## Welcome JESD84
 
 JESD84 is the standard describing both the hardware and software interface of eMMC devices. The most recent version of the
-eMMC standard is 5.1, and it's freely available from the JEDEC website [1]. 
+eMMC standard is 5.1, and it's [freely available from the JEDEC website][1]
 
 Skimming through the standard, a few commands available in the eMMC communication protocol seem promising:
 
@@ -201,7 +201,7 @@ SD cards). To figure out how to implement the recipe, we need to figure out how 
 ### Sanitization
 
 Thankfully, sanitization is pretty simple. Taking a peek through the `mmc` code, it seems like the block device supports the dedicated sanitization
-command through an `ioctl(2)` interface. This can be confirmed by checking the helpful `mmc-utils` [2] source code. 
+command through an `ioctl(2)` interface. This can be confirmed by checking the helpful [`mmc-utils`][2] source code. 
 
 ```c
 int do_sanitize(int nargs, char **argv)
@@ -327,3 +327,6 @@ to properly wipe an eMMC used in an embedded Linux system. As it turns out, the 
 complicated.
 
 
+[1]: https://www.jedec.org/document_search?search_api_views_fulltext=jesd84-a441
+
+[2]: https://git.kernel.org/pub/scm/linux/kernel/git/cjb/mmc-utils.git
