@@ -44,7 +44,7 @@ Most usage patterns for non-volatile memory don't uniformly distribute writes ac
 so this is a very real concern. Mitigating this is referred to as _wear leveling_.
 
 You need to keep all of this in mind when writing software that directly interacts with raw flash memory.
-Thankfully, if you're in Linux, you an avoid most of this by simply using a filesystem like **UBIFS**, which
+Thankfully, if you're in Linux, you can avoid most of this by simply using a filesystem like **UBIFS**, which
 is designed to be used with raw flash memory. But at the end of the day, your CPU is executing the instructions
 that manage the performance and wear of the flash device. 
 
@@ -61,8 +61,7 @@ How do those algorithms actually work in an eMMC? It's pretty simple at a high l
 * Externally, the eMMC expose a contiguous, addressable range of memory to users (i.e. you and your kernel). The size
 of this memory matches the advertised size of the device. If you have a 4GB eMMC, you can
 write anywhere from `0x00000000` to `0xffffffff`. You can think of this as the public API of the 
-eMMC — users can read and write to any location within this address space. The eMMC standard refers
-to this as the _mapped host address range_.
+eMMC — users can read and write to any location within this address space.
 
 * Internally, the eMMC includes more flash memory than is actually advertised. This varies by
 device, and it's more or less impossible to tell how much "real" storage an eMMC has without asking
@@ -73,10 +72,9 @@ underlying physical memory. If you replace "public" with "virtual", this is very
 virtual memory works. With virtual memory, processes (the end-users of the memory) have no idea how
 a specific virtual address maps to the underlying physical memory. Similarly, with an eMMC, the filesystem and
 block driver (the end-users of the memory) have no idea how a specific offset from the start of the eMMC maps
-to its underlying flash memory. The eMMC standard refers
-to memory not currently mapped to the public address space as the _unmapped host address range_.
+to its underlying flash memory.
 
-The eMMC standard (more on that later) gives some terminology to help with this.
+The eMMC standard (more on that later) provides some terminology to help with this.
 
 * The sections of flash memory that are currently mapped to an address and can be accessed externally make up the **Mapped Host Address Space**.
 
